@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block content %}
+{% if title == "Don't Read This" %}
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">/flag.txt</a>
+{% endif %}
 <h1>{{ title | e }}</h1>
 <iframe srcdoc="{{ content | safe}}" sandbox>
     <p>iframe srcdoc not supported</p>

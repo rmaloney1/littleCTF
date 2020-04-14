@@ -19,7 +19,10 @@ if __name__ == "__main__":
     ''',("FLAG_0_" + flags[0],))
 
     db.execute_sql('''
-        INSERT INTO blogs (author, title, privacy, content) VALUES ('Joe', 'No swearing', 0, 'I will personally report anyone who swears in a blog!')
+        INSERT INTO blogs (author, title, privacy, content) VALUES ('Joe', 'No swearing', 0, '<h1>I will personally report anyone who swears in a blog!</h1>')
+    ''')
+    db.execute_sql('''
+        INSERT INTO blogs (author, title, privacy, content) VALUES ('Joe', 'Don''t Read This', 0, 'Oh no!!')
     ''')
     db.execute_sql('''
         INSERT INTO blogs (author, title, privacy, content) VALUES ('admin', 'Helloe', 0, 'Welcome to Zoom Blogs! We are super secure, scripts will not run in blog posts so no XSS!')
