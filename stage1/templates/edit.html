@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %} All Blogs {% endblock %}
+
+{% block content %}
+<form action="/edit/{{ id }}" method="POST">
+    <input type="text" name="title" placeholder="Title" value="{{ title }}">
+    <textarea rows="8" cols="70" name="content">{{ content }}</textarea>
+    <div>
+        <input type="checkbox" name="privacy" value="make private" {% if privacy %}checked{% else %}{% endif %}>
+        <label for="privacy">Private</label>
+    </div>
+    <input type="submit" value="Save">
+</form>
+{% endblock %}

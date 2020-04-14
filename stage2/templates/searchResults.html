@@ -1,0 +1,27 @@
+<form action="/" method="GET">
+    <button type="submit">Go back</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Code</th>
+            <th scope="col">Airline</th>
+            <th scope="col">Start</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Departs</th>
+            <th scope="col">Arrives</th>
+        </tr>
+    </thead>
+    {% for row in rows %}
+        <tr>
+            {% for ele in row %}
+            <td>
+                {{ ele }}
+            </td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+
+   
+</table>
+{% endblock %}

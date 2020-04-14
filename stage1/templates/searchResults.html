@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %} All Blogs {% endblock %}
+
+{% block content %}
+<h3>Logged in as {{ username }}</h3>
+{% if flag2 %}
+<h3>Congratulations: {{ flag }}</h3>
+{% else %}{% endif %}
+<form action="/create" method="GET">
+    <button type="submit" value="Create">Create post</button>
+</form>
+<form action="/logout" method="POST">
+    <button type="submit" value="Logout">Logout</button>
+</form>
+<div class="text-center">
+    <h1>
+        Blog Posts
+    </h1>
+</div>
+<table class="table">
+    <col width="60">
+    <col width="130">
+    <col width="7">
+    <col width="7">
+    <thead>
+        <tr>
+            <th scope="col">Author</th>
+            <th scope="col">Title</th>
+            <th scope="col" colspan="2">Actions</th>
+        </tr>
+    </thead>
+    {% for row in rows %}
+        <tr>
+            <td>
+                {{ row[0] }}
+            </td>
+            <td>
+                {{ row[1] }}
+            </td>
+            <td>
+                <a href="/view/{{ row[2] }}">view</a>
+            </td>
+            <td>
+                <a href="/edit/{{ row[2] }}">edit</a>
+            </td>
+        </tr>
+    {% endfor %}
+
+   
+</table>
+{% endblock %}

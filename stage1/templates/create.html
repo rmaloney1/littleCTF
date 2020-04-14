@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %} All Blogs {% endblock %}
+
+{% block content %}
+<form action="/create" method="POST">
+    <input type="text" name="title" placeholder="Title">
+    <textarea rows="8" cols="70" name="content" placeholder="Write your blog!"></textarea>
+    <input type="checkbox" name="privacy" value="make private">
+    <label for="privacy">Make Private</label>
+    <input type="submit" value="Save">
+</form>
+{% endblock %}

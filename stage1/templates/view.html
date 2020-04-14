@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %} 
+{{ title |e}} 
+{% endblock %}
+
+{% block content %}
+<h1>{{ title | e }}</h1>
+<iframe srcdoc="{{ content | safe}}" sandbox>
+    <p>iframe srcdoc not supported</p>
+</iframe>
+
+<div>
+    <h3>By {{ author }}</h3>
+</div>
+<form action="/report" method="POST">
+    <button type="submit" name="accused" id="report" value={{ author }}>Report {{ author }}</button> <!-- this is vulnerable to value injection-->
+</form>
+{% endblock %}

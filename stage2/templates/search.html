@@ -1,0 +1,29 @@
+{% extends "layout.html" %} 
+
+{% block title %} Flights {% endblock %}
+
+{% block content %}
+{% if username is not none %}
+<h3>Logged in as: {{ username }}</h3>
+<form action="/logout" method="POST">
+    <button type="submit"> Logout</button>
+</form>
+<h3> Upload flights</h3>
+<form action="/upload" method="POST" enctype="multipart/form-data">
+    <label for="flightfile">Choose yaml file</label>
+    <input type="file" name="flightfile" id="flightfile">
+    <button type="submit" value="Upload">submit</button>
+</form>
+
+{% else %}
+<form action="/login" method="GET">
+    <button type="submit"> Admin Login</button>
+</form>
+
+{% endif %}
+<h2> Search Flights by code </h2>
+<form action="/search/results" method="post">
+    <input type="text" name="search">
+    <button type="submit">Search Flights</button>
+</form>
+{% endblock %}

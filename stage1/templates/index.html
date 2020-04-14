@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+<html>
+<head>
+</head>
+<body>
+    <form action="/register" method="POST">
+        <div>
+        <h3>Username<h3>
+        <input type=text name="username">
+        <h3>Password</h3>
+        <input type=password name="password">
+        </div>
+        <input type="submit" value="Register" name="register">
+        <input type="submit" value="Login" name="login" onclick="this.form.action='/login'">
+    </form>
+</body>
+</html>
+
+{% endblock %}

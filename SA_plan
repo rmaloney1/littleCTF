@@ -1,0 +1,26 @@
+Something awesome planning
+
+SQLi
+	blacklists
+	second order SQLi
+
+XSS
+	blacklists
+	dom based
+	second order?
+
+LFI - have to be local files system
+	can be done with flask?
+
+Other
+	common vulnerabilities
+
+
+
+final ideas:
+	blog website
+
+	flag for pword hashes sql
+	flag for admin cookies xss
+	flag for local file lfi
+	flag for ssti - config secret key
